@@ -14,6 +14,7 @@ import org.tlauncher.statistics.service.InstallVersionService;
 import java.sql.Timestamp;
 import java.util.Date;
 
+
 @Controller
 public class InstallVersionController {
     @Autowired

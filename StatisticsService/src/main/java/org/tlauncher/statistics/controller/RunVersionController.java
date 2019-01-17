@@ -6,11 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.tlauncher.statistics.model.RunVersion;
 import org.tlauncher.statistics.service.RunVersionService;
-
-import java.sql.Timestamp;
-import java.util.Date;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -24,10 +20,8 @@ public class RunVersionController {
 
     @RequestMapping(value = "/save/run/version", method = POST)
     public ResponseEntity<String> getVersion(@RequestParam(value = "version") String version) {
-        RunVersion runVersion = new RunVersion();
-        runVersion.setVersion(version);
-        runVersion.setDate(new Timestamp(new Date().getTime()));
-        service.save(runVersion);
+        service.setVersion(version);
+        service.save();
         return ResponseEntity.accepted().build();
     }
 }

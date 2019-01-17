@@ -7,18 +7,28 @@ import org.tlauncher.statistics.repository.AdyoutubeCounterRepository;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
+
+
 
 @Service
 public class AdyoutubeCounterService {
 
 
+    private AtomicInteger count = new AtomicInteger(0);
+
     @Autowired
     private AdyoutubeCounterRepository repository;
 
 
-    public void save(AdyoutubeCounter adyoutubeCounter, int count) {
+    public void save(AdyoutubeCounter adyoutubeCounter) {
         adyoutubeCounter.setDate(new Timestamp(new Date().getTime()));
-        adyoutubeCounter.setCount(count);
+        adyoutubeCounter.setCount(count.get());
         repository.save(adyoutubeCounter);
+        count = new AtomicInteger(0);
+    }
+
+    public void counter() {
+        count.getAndIncrement();
     }
 }
