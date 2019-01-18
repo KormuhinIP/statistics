@@ -10,20 +10,16 @@ import java.util.Date;
 
 @Service
 public class RunVersionService {
-    private String version;
+
 
     @Autowired
     private RunVersionRepository repository;
 
 
-    public void save() {
+    public void saveVersion(String version) {
         RunVersion runVersion = new RunVersion();
         runVersion.setVersion(version);
         runVersion.setDate(new Timestamp(new Date().getTime()));
         repository.save(runVersion);
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
     }
 }

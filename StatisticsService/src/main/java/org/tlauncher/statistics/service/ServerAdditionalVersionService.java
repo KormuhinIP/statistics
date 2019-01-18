@@ -10,20 +10,18 @@ import java.util.Date;
 
 @Service
 public class ServerAdditionalVersionService {
-    private String additionalVersionId;
+
 
     @Autowired
     private ServerAdditionalVersionRepository repository;
 
 
-    public void save() {
+    public void saveAdditionalVersionId(String additionalVersionId) {
         ServerAdditionalVersion serverAdditionalVersion = new ServerAdditionalVersion();
         serverAdditionalVersion.setAdditionalVersionId(additionalVersionId);
         serverAdditionalVersion.setDate(new Timestamp(new Date().getTime()));
         repository.save(serverAdditionalVersion);
     }
-
-    public void setAdditionalVersionId(String additionalVersionId) {
-        this.additionalVersionId = additionalVersionId;
-    }
 }
+
+

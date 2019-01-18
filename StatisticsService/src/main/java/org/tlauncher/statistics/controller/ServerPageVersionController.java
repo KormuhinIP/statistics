@@ -19,8 +19,7 @@ public class ServerPageVersionController {
 
     @RequestMapping(value = "/save/hot/server/main/page", method = RequestMethod.POST)
     public ResponseEntity<String> getId(@RequestParam(value = "version") String pageVersionId) {
-        service.setPageVersionId(pageVersionId);
-        service.save();
+        service.savePageVersionId(pageVersionId);
         return ResponseEntity.accepted().build();
     }
 }

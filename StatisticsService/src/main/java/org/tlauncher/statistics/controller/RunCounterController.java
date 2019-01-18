@@ -19,7 +19,7 @@ public class RunCounterController {
 
     @RequestMapping(value = "/save/run/tlauncher", method = RequestMethod.POST)
     public ResponseEntity<String> runCounter() {
-        service.counter();
+        service.incrementCounter();
         return ResponseEntity.accepted().build();
     }
 

@@ -10,19 +10,15 @@ import java.util.Date;
 
 @Service
 public class ServerPageVersionService {
-    private String pageVersionId;
+
 
     @Autowired
     private ServerPageVersionRepository repository;
 
-    public void save() {
+    public void savePageVersionId(String pageVersionId) {
         ServerPageVersion serverPageVersion = new ServerPageVersion();
         serverPageVersion.setPageVersionId(pageVersionId);
         serverPageVersion.setDate(new Timestamp(new Date().getTime()));
         repository.save(serverPageVersion);
-    }
-
-    public void setPageVersionId(String pageVersionId) {
-        this.pageVersionId = pageVersionId;
     }
 }

@@ -7,7 +7,6 @@ import org.tlauncher.statistics.repository.UpdaterRepository;
 
 import javax.servlet.http.HttpServletRequest;
 
-/*@version 1.0*/
 
 @Service
 public class UpdaterService {

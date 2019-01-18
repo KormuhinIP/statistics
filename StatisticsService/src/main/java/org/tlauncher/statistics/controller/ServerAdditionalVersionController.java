@@ -20,8 +20,7 @@ public class ServerAdditionalVersionController {
 
     @RequestMapping(value = "/save/hot/server/additional", method = POST)
     public ResponseEntity<String> getAdditionalId(@RequestParam(value = "version") String additionalVersionId) {
-        service.setAdditionalVersionId(additionalVersionId);
-        service.save();
+        service.saveAdditionalVersionId(additionalVersionId);
         return ResponseEntity.accepted().build();
     }
 }

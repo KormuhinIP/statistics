@@ -25,10 +25,10 @@ public class AdyoutubeCounterService {
         adyoutubeCounter.setDate(new Timestamp(new Date().getTime()));
         adyoutubeCounter.setCount(count.get());
         repository.save(adyoutubeCounter);
-        count = new AtomicInteger(0);
+        count = new AtomicInteger(0); //reset the counter every time the scheduler calls
     }
 
-    public void counter() {
+    public void incrementCounter() {
         count.getAndIncrement();
     }
 }

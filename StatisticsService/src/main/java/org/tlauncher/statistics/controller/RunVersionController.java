@@ -20,8 +20,7 @@ public class RunVersionController {
 
     @RequestMapping(value = "/save/run/version", method = POST)
     public ResponseEntity<String> getVersion(@RequestParam(value = "version") String version) {
-        service.setVersion(version);
-        service.save();
+        service.saveVersion(version);
         return ResponseEntity.accepted().build();
     }
 }

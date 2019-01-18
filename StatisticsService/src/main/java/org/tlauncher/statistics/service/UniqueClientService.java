@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.tlauncher.statistics.model.UniqueClient;
 import org.tlauncher.statistics.repository.UniqueClientRepository;
 
-/*@version 1.0*/
 
 @Service
 public class UniqueClientService {

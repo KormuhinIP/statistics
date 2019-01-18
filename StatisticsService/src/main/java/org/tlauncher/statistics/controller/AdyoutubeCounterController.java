@@ -18,7 +18,7 @@ public class AdyoutubeCounterController {
 
     @RequestMapping(value = "/save/adyoutube", method = RequestMethod.POST)
     public ResponseEntity<String> adyoutubeCounter() {
-        service.counter();
+        service.incrementCounter();
         return ResponseEntity.accepted().build();
     }
 

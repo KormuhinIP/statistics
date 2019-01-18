@@ -25,10 +25,10 @@ public class RunCounterService {
         runCounter.setDate(new Timestamp(new Date().getTime()));
         runCounter.setCount(count.get());
         repository.save(runCounter);
-        count = new AtomicInteger(0);
+        count = new AtomicInteger(0); //reset the counter every time the scheduler calls
     }
 
-    public void counter() {
+    public void incrementCounter() {
         count.getAndIncrement();
     }
 }
